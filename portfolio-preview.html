@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Hammad Asif - AI Engineer & Full-Stack Developer</title>
+    <meta name="description" content="Python AI & NLP Engineer and Full-Stack Developer with expertise in Machine Learning, Natural Language Processing, and modern web technologies.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #6366f1;
+            --primary-dark: #4f46e5;
+            --accent-color: #06b6d4;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-accent: #f1f5f9;
+            --border-color: #e2e8f0;
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --gradient-primary: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--gradient-primary);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            opacity: 0.8;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.75rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            margin: 0.5rem;
+        }
+
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 1rem 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 1rem 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .card {
+            background: var(--bg-primary);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .contact-info {
+            background: var(--bg-secondary);
+            padding: 3rem;
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--bg-primary);
+            border-radius: 0.5rem;
+        }
+
+        .contact-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tech-category {
+            background: var(--bg-accent);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .tech-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .tech-list {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="fade-in">
+                <h1 class="hero-title">Muhammad Hammad Asif</h1>
+                <p class="hero-subtitle">Python AI & NLP Engineer | Full-Stack Developer</p>
+                <p class="hero-description">
+                    Passionate Machine Learning Engineer with 4+ years of experience building intelligent applications 
+                    and data-driven solutions. Specializing in NLP systems, LLM training, and full-stack development 
+                    with a focus on translating complex data into actionable insights.
+                </p>
+                
+                <div>
+                    <a href="mailto:Hammadasif1437@gmail.com" class="btn btn-primary">Get In Touch</a>
+                    <a href="#" class="btn btn-secondary">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="card">
+                <p style="font-size: 1.125rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    I am a passionate and detail-oriented Machine Learning Engineer and Full-Stack Developer
+                    with an MS in Data Science and over 4 years of experience building intelligent applications
+                    and data-driven solutions. Currently at Turing, I specialize in designing NLP systems,
+                    training LLMs, and integrating AI workflows into production environments.
+                </p>
+                <p style="font-size: 1.125rem; line-height: 1.8; color: var(--text-secondary);">
+                    I thrive in target-driven teams and enjoy translating complex data into actionable insights.
+                    My expertise spans across the entire software development lifecycle, from conceptualization
+                    and design to deployment and maintenance of scalable applications.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Projects Section -->
+    <section class="section" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="section-title">Professional Projects</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">LLM-based Data Analyst Training System</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Turing.com</strong></p>
+                    <p style="margin-bottom: 1rem;">Spearheaded development of cutting-edge LLM system for training data analysts with intelligent query understanding.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Python</span>
+                        <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">LLMs</span>
+                        <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">NLP</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">TenderML - AI Document Classification</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Zaytrics (Pvt.) Limited</strong></p>
+                    <p style="margin-bottom: 1rem;">AI-based system for real-time text classification from German construction tender PDFs with 95% accuracy.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Python</span>
+                        <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">SVM</span>
+                        <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">AWS</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">CHappie - VOIP SAAS Platform</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Zaytrics (Pvt.) Limited</strong></p>
+                    <p style="margin-bottom: 1rem;">Comprehensive call center solution with web-based calling, monitoring, and role-based access control.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">React</span>
+                        <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Flask</span>
+                        <span style="background: var(--primary-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">VOIP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Side Projects Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Side Projects</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3 style="color: var(--accent-color); margin-bottom: 1rem;">Real-time Ecommerce Price Comparison Tool</h3>
+                    <p style="margin-bottom: 1rem;">Web scraping tool comparing prices across Amazon, eBay, and other platforms in real-time.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Python</span>
+                        <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Web Scraping</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--accent-color); margin-bottom: 1rem;">FoodScanSAAS - Mobile App</h3>
+                    <p style="margin-bottom: 1rem;">SAAS mobile app scanning food barcodes with ChatGPT integration for ingredient information.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Mobile Dev</span>
+                        <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">ChatGPT API</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3 style="color: var(--accent-color); margin-bottom: 1rem;">FlowSketchJS Library</h3>
+                    <p style="margin-bottom: 1rem;">Lightweight JavaScript library for rendering interactive flow diagrams without dependencies.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">JavaScript</span>
+                        <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.75rem; border-radius: 1rem; font-size: 0.75rem;">Canvas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h3 class="tech-title">Machine Learning & AI</h3>
+                    <div class="tech-list">
+                        Natural Language Processing<br>
+                        Deep Learning & Neural Networks<br>
+                        TensorFlow & Keras<br>
+                        LLM Training & Fine-tuning<br>
+                        Computer Vision
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3 class="tech-title">Programming Languages</h3>
+                    <div class="tech-list">
+                        Python (Advanced)<br>
+                        JavaScript (ES6+)<br>
+                        PHP, C#, C++<br>
+                        SQL<br>
+                        HTML5 & CSS3
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3 class="tech-title">Frameworks & Tools</h3>
+                    <div class="tech-list">
+                        React.js & Redux<br>
+                        FastAPI & Flask<br>
+                        Node.js & Express<br>
+                        AWS & Docker<br>
+                        MySQL & MongoDB
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="contact-info">
+                <h2 class="contact-title">Get In Touch</h2>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary);">
+                    Let's discuss how we can work together on your next project
+                </p>
+                
+                <div class="contact-item">
+                    <span>📧</span>
+                    <a href="mailto:Hammadasif1437@gmail.com" class="contact-link">Hammadasif1437@gmail.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <span>💼</span>
+                    <a href="https://linkedin.com/in/muhammadhammadasif" target="_blank" class="contact-link">LinkedIn Profile</a>
+                </div>
+                
+                <div class="contact-item">
+                    <span>🔗</span>
+                    <a href="https://github.com/hammad-asif" target="_blank" class="contact-link">GitHub Profile</a>
+                </div>
+                
+                <div style="margin-top: 2rem; padding: 1rem; background: var(--bg-primary); border-radius: 0.5rem;">
+                    <span style="color: #10b981;">●</span> Available for new opportunities
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple scroll animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .tech-category').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
