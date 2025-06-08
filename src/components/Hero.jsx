@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Download, Mail, Github, Linkedin, ChevronDown, Sparkles } from 'lucide-react';
+import { Download, Mail, Github, Linkedin, ChevronDown, Sparkles, FileText } from 'lucide-react';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -63,14 +63,27 @@ const Hero = () => {
               <Mail size={20} />
               Get In Touch
             </button>
-            <a
-              href="/resume.pdf"
-              className="btn btn-secondary"
-              download="Muhammad_Hammad_Asif_Resume.pdf"
-            >
-              <Download size={20} />
-              Download CV
-            </a>
+            <div className="resume-buttons">
+              <a
+                href="/MuhammadHammad CV.pdf"
+                className="btn btn-secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Resume in new tab"
+              >
+                <FileText size={20} />
+                View Resume
+              </a>
+              <a
+                href="/MuhammadHammad CV.pdf"
+                className="btn btn-outline"
+                download="Muhammad_Hammad_Asif_Resume.pdf"
+                aria-label="Download Resume PDF"
+              >
+                <Download size={20} />
+                Download
+              </a>
+            </div>
           </div>
 
           <div className="hero-social">
