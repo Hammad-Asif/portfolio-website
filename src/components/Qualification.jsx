@@ -6,6 +6,18 @@ const Qualification = () => {
 
   const experiences = [
     {
+      title: "Freelance AI Integration Developer",
+      company: "Scanify Dev",
+      location: "Remote",
+      period: "July 2025 – November 2025",
+      description: "Contributed to an AI-powered Shopify theme generation platform that used OpenAI APIs to automatically create store content and images for ecommerce clients.",
+      achievements: [
+        "Integrated and maintained OpenAI API features in live production app",
+        "Resolved Python FastAPI backend bugs affecting AI feature delivery",
+        "Improved stability of OpenAI-powered content and image generation"
+      ]
+    },
+    {
       title: "Machine Learning Engineer / AI Developer",
       company: "Turing.com",
       location: "Remote",
@@ -18,18 +30,7 @@ const Qualification = () => {
         "Designed prompt evaluation frameworks for model assessment"
       ]
     },
-    {
-      title: "Freelance AI Integration Developer",
-      company: "Scanify Dev",
-      location: "Remote",
-      period: "July 2025 – November 2025",
-      description: "Contributed to an AI-powered Shopify theme generation platform that used OpenAI APIs to automatically create store content and images for ecommerce clients.",
-      achievements: [
-        "Integrated and maintained OpenAI API features in live production app",
-        "Resolved Python FastAPI backend bugs affecting AI feature delivery",
-        "Improved stability of OpenAI-powered content and image generation"
-      ]
-    },
+    
     {
       title: "Full-Stack Software Developer",
       company: "Zaytrics (Pvt.) Limited",
