@@ -14,7 +14,10 @@ const Skills = () => {
         "Scikit-Learn & NLTK",
         "LLM Training & Fine-tuning",
         "Text Summarization (LSA, Seq2Seq)",
-        "Computer Vision"
+        "Computer Vision",
+        "RLHF & Data Annotation",
+        "OpenAI API Integration",
+        "Prompt Engineering"
       ]
     },
     {
@@ -52,7 +55,6 @@ const Skills = () => {
         "FastAPI & Flask",
         "Node.js & Express",
         "RESTful API Design",
-        "GraphQL",
         "Microservices Architecture",
         "Authentication & Authorization",
         "API Documentation",

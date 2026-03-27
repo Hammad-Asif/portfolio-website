@@ -174,7 +174,7 @@ const Contact = () => {
       <footer className="footer">
         <div className="container">
           <div className="footer-content">
-            <p>&copy; 2024 Muhammad Hammad Asif. All rights reserved.</p>
+            <p>&copy; 2026 Muhammad Hammad Asif. All rights reserved.</p>
             <p>Built with React & Modern Web Technologies</p>
           </div>
         </div>

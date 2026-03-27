@@ -6,22 +6,22 @@ const About = () => {
     {
       icon: <Brain size={32} />,
       title: "AI & Machine Learning",
-      description: "Specialized in NLP, LLM training, and intelligent system design with 4+ years of experience."
+      description: "Experienced in NLP pipelines, ML model training, prompt engineering, RLHF annotation, and AI model evaluation on Google-commissioned projects."
     },
     {
       icon: <Code size={32} />,
       title: "Full-Stack Development",
-      description: "Proficient in modern web technologies including React, Node.js, Python, and API development."
+      description: "Proficient in Python FastAPI and Flask backends, Node.js, REST API design, and React frontends — with production deployments on AWS."
     },
     {
       icon: <Database size={32} />,
       title: "Data Engineering",
-      description: "Expert in data analysis, mining, and building scalable data pipelines for production systems."
+      description: "Experienced in building data pipelines, text classification systems, PDF processing tools, and extractive/abstractive summarization models."
     },
     {
       icon: <Cloud size={32} />,
       title: "Cloud & DevOps",
-      description: "Experienced with AWS, Docker, CI/CD pipelines, and cloud-native application deployment."
+      description: "Deployed production systems on AWS EC2 with Ray cluster autoscaling, Docker, CI/CD pipelines, and Google Cloud Document AI."
     }
   ];
 
@@ -33,14 +33,10 @@ const About = () => {
         <div className="about-content">
           <div className="about-text">
             <p className="about-description">
-              <strong>MS in Data Science</strong> graduate with 4+ years of hands-on experience crafting intelligent solutions
-              that bridge the gap between complex AI research and real-world applications. Currently at <strong>Turing</strong>,
-              I architect NLP systems and train LLMs that power next-generation data analytics platforms.
+              <strong>MS in Data Science</strong> graduate with 4+ years of experience building production ML systems, NLP pipelines, and scalable REST APIs. I specialize in AI integration — connecting large language models and machine learning into real backend systems that clients can use.
             </p>
             <p className="about-description">
-              My passion lies in transforming raw data into actionable intelligence through cutting-edge machine learning,
-              robust full-stack development, and scalable cloud architectures. I thrive in collaborative environments
-              where innovation meets practical implementation.
+              I have independently architected and deployed end-to-end AI systems — from document classification platforms on AWS to Google Cloud document extraction pipelines and OpenAI-powered applications. I hold an MS in Data Science and have published NLP research. I work best with teams that need someone who owns both the AI and the engineering layer of a product.
             </p>
           </div>
         </div>

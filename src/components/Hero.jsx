@@ -36,11 +36,11 @@ const Hero = () => {
           </h1>
 
           <div className="hero-subtitle-container">
-            <p className="hero-subtitle">AI Engineer & Full-Stack Developer</p>
+            <p className="hero-subtitle">Python Backend & AI Integration Developer</p>
           </div>
 
           <p className="hero-description">
-            Transforming complex data into intelligent solutions with 4+ years of expertise in NLP, LLM training, and scalable web applications.
+            Python backend and AI integration engineer. I build production ML systems, NLP pipelines, and scalable REST APIs — from architecture to cloud deployment.
           </p>
 
           <div className="hero-stats">
@@ -53,8 +53,8 @@ const Hero = () => {
               <span className="stat-label">Projects Completed</span>
             </div>
             <div className="stat-item">
-              <span className="stat-number">2</span>
-              <span className="stat-label">Companies</span>
+              <span className="stat-number">3</span>
+              <span className="stat-label">Companies & Clients</span>
             </div>
           </div>
 

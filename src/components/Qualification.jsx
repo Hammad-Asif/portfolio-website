@@ -9,12 +9,25 @@ const Qualification = () => {
       title: "Machine Learning Engineer / AI Developer",
       company: "Turing.com",
       location: "Remote",
-      period: "April 2024 – Present",
-      description: "Spearheaded development of cutting-edge LLM-based systems for training data analysts. Engineered robust NLP pipelines and fine-tuned models on domain-specific datasets.",
+      period: "April 2024 – May 2025",
+      description: "Contributed to a Google-commissioned project through Turing to improve Gemini's data analysis reasoning capabilities. Created SFT datasets, designed prompt evaluation frameworks, and performed RLHF annotation to align model outputs with real-world analytical tasks.",
       achievements: [
-        "Developed intelligent query understanding systems",
-        "Implemented adaptive learning pathways",
-        "Led model evaluation using custom scoring metrics"
+        "Contributed to Google x Turing project to train Gemini AI",
+        "Created supervised fine-tuning (SFT) datasets for data analytics tasks",
+        "Performed RLHF annotation and human-in-the-loop evaluation",
+        "Designed prompt evaluation frameworks for model assessment"
+      ]
+    },
+    {
+      title: "Freelance AI Integration Developer",
+      company: "Scanify Dev",
+      location: "Remote",
+      period: "July 2025 – November 2025",
+      description: "Contributed to an AI-powered Shopify theme generation platform that used OpenAI APIs to automatically create store content and images for ecommerce clients.",
+      achievements: [
+        "Integrated and maintained OpenAI API features in live production app",
+        "Resolved Python FastAPI backend bugs affecting AI feature delivery",
+        "Improved stability of OpenAI-powered content and image generation"
       ]
     },
     {
@@ -22,11 +35,12 @@ const Qualification = () => {
       company: "Zaytrics (Pvt.) Limited",
       location: "Islamabad, Pakistan",
       period: "January 2021 – June 2023",
-      description: "Built intelligent PDF processing tools and machine learning models for text classification. Designed RESTful APIs and deployed scalable cloud solutions.",
+      description: "Independently built and deployed multiple production AI systems as client-facing APIs. Delivered TenderML and GCP InsightDocs as complete end-to-end solo projects, and contributed backend and API components to team projects including a VOIP call center platform.",
       achievements: [
-        "Achieved 95% accuracy in document classification",
-        "Deployed solutions on AWS with autoscaling",
-        "Developed comprehensive call center platforms"
+        "Built TenderML solo — 95% accuracy PDF classification deployed on AWS EC2",
+        "Built GCP InsightDocs solo — Google Cloud Document AI extraction pipeline",
+        "Deployed FastAPI systems on AWS EC2 with Ray cluster autoscaling",
+        "Contributed backend and API components to VOIP call center (team project)"
       ]
     }
   ];

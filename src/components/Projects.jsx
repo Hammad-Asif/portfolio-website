@@ -14,18 +14,18 @@ const Projects = () => {
   const projects = [
     {
       id: 'turing-llm',
-      title: "LLM-based Data Analyst Training System",
+      title: "Gemini AI Trainer — Google x Turing Project",
       company: "Turing.com",
-      shortDescription: "Spearheaded development of a cutting-edge LLM-based system designed to train data analysts through intelligent query understanding and adaptive learning pathways.",
-      fullDescription: "Engineered robust natural language processing (NLP) pipelines to transform unstructured business queries into actionable data insights using state-of-the-art language models. Collaborated with cross-functional teams to fine-tune LLM models on domain-specific datasets, significantly improving response accuracy and contextual relevance for real-world data analytics tasks. Designed and executed prompt engineering strategies to enhance model performance, tailored to specific analytical intents and workflows in a multimodal AI pipeline. Led evaluation of generated outputs across different models using custom scoring metrics and human-in-the-loop feedback systems to determine the most contextually accurate responses.",
+      shortDescription: "Contributed to a Google-commissioned project through Turing to improve Gemini's data analysis reasoning — creating training datasets, evaluation frameworks, and RLHF annotations.",
+      fullDescription: "As part of a Google x Turing collaboration, worked on improving Gemini's ability to handle real-world data analysis tasks. Responsibilities included designing prompt evaluation frameworks to assess model responses across different analytical scenarios, creating high-quality supervised fine-tuning (SFT) datasets tailored to data analytics workflows, and performing RLHF (Reinforcement Learning from Human Feedback) annotation to align model outputs with business logic and analytical accuracy. Applied human-in-the-loop feedback methodology to iteratively improve model performance across multimodal AI workflows.",
       icon: <Brain size={32} />,
-      technologies: ["Python", "LLMs", "NLP", "TensorFlow", "Prompt Engineering", "Machine Learning", "Data Analytics"],
+      technologies: ["Python", "Gemini", "Prompt Engineering", "RLHF", "SFT", "Data Annotation", "Human-in-the-loop", "Data Analytics"],
       achievements: [
-        "Developed intelligent query understanding system",
-        "Implemented adaptive learning pathways",
-        "Fine-tuned LLM models on domain-specific datasets",
-        "Created custom scoring metrics for model evaluation",
-        "Improved response accuracy and contextual relevance"
+        "Contributed to Google-commissioned Gemini AI improvement project",
+        "Created SFT datasets for data analytics task training",
+        "Performed RLHF annotation to align model outputs with business logic",
+        "Designed prompt evaluation frameworks across analytical scenarios",
+        "Applied human-in-the-loop methodology for iterative improvement"
       ],
       category: "AI/Machine Learning",
       type: "Work Project"
@@ -34,11 +34,12 @@ const Projects = () => {
       id: 'tenderml',
       title: "TenderML - AI Document Classification System",
       company: "Zaytrics (Pvt.) Limited",
-      shortDescription: "Developed an AI-based system for real-time text classification and information extraction from German construction tender PDFs with 95% accuracy.",
+      shortDescription: "Independently built from scratch — an AI system for real-time text classification and information extraction from German construction tender PDFs with 95% accuracy. Sole developer from ML training to production API deployment.",
       fullDescription: "Built a comprehensive AI system utilizing Support Vector Machines (SVM) to classify text within PDF documents containing German construction tender information. Processed over 1000 documents with varying formats but consistent contextual content. Employed tree data structures post-classification with DFS traversal for specific information identification. Implemented filtering mechanisms to refine extracted data and deployed the solution using FASTAPI on Ray cluster hosted on AWS EC2 with autoscaling capabilities.",
       icon: <FileText size={32} />,
       technologies: ["Python", "SVM", "FASTAPI", "AWS EC2", "Ray Cluster", "PDF Processing", "Machine Learning"],
       achievements: [
+        "Built entirely solo — from ML model training to production API deployment",
         "Achieved 95% accuracy in document classification",
         "Processed 1000+ German construction tender documents",
         "Implemented tree data structure with DFS for data extraction",
@@ -52,11 +53,12 @@ const Projects = () => {
       id: 'gcp-insightdocs',
       title: "GCP InsightDocs - Document Extraction Platform",
       company: "Zaytrics (Pvt.) Limited",
-      shortDescription: "Comprehensive document analysis solution using Google Cloud Document AI and OCR for extracting key information from PDFs and images.",
+      shortDescription: "Independently built from scratch — a comprehensive document analysis solution using Google Cloud Document AI and OCR. Sole developer, delivered as a client-facing API integrated into the client's existing system.",
       fullDescription: "Developed a full-stack solution utilizing Google Cloud Document AI and OCR for automated key-value extraction from PDF files and images. Built ReactJS frontend with document viewer and sidebar displaying extracted information. Implemented Flask Python backend for server-side logic and GCP service communication. The system provides users with an intuitive interface to view original documents while accessing comprehensive extracted data summaries.",
       icon: <Cloud size={32} />,
       technologies: ["ReactJS", "Flask", "Python", "Google Cloud Document AI", "OCR", "GCP"],
       achievements: [
+        "Built entirely solo — complete end-to-end ownership from development to deployment",
         "Automated key-value extraction from documents",
         "Built intuitive document viewer interface",
         "Integrated Google Cloud Document AI services",
@@ -70,12 +72,12 @@ const Projects = () => {
       id: 'chappie',
       title: "CHappie - VOIP SAAS Call Center Platform",
       company: "Zaytrics (Pvt.) Limited",
-      shortDescription: "Dutch-origin subscription-based VOIP SAAS platform unifying call center operations with web-based calling, monitoring, and role-based access control.",
+      shortDescription: "Dutch-origin subscription-based VOIP SAAS platform unifying call center operations. Contributed Python backend and API components as part of a cross-functional development team.",
       fullDescription: "Built a comprehensive call center solution providing web-based calling, VOIP integration, real-time sales monitoring, agent performance tracking, callback handling, and administrative control with role-based access rights. The system centralizes all communication and management functions, enabling organizations to streamline call center workflows and sales operations on a single platform. Features intuitive dashboards for both agents and administrators to enhance productivity and communication efficiency.",
       icon: <Phone size={32} />,
       technologies: ["ReactJS", "Flask", "Node.js", "Python", "MySQL", "MongoDB", "Firebase", "VOIP"],
       achievements: [
-        "Unified multi-region call center operations",
+        "Contributed Python backend and API components to team project",
         "Implemented real-time sales monitoring",
         "Built role-based access control system",
         "Created agent performance tracking",
@@ -88,12 +90,12 @@ const Projects = () => {
       id: 'voip-voice-comparison',
       title: "VOIP Voice Comparison System",
       company: "Zaytrics (Pvt.) Limited",
-      shortDescription: "Real-time voice comparison system for VOIP communications, separating agent and customer voices to ensure contract compliance.",
+      shortDescription: "Real-time voice comparison system for VOIP communications. Collaborated as part of the Zaytrics development team on this audio processing feature.",
       fullDescription: "Embedded within CHappie, this system performs real-time voice comparison between agents and customers during VOIP communication. Utilizes advanced audio processing techniques to separate voices and compares agent speech with predefined contracts to ensure rule compliance. Implements sophisticated speech recognition and rule verification mechanisms for immediate feedback and security enhancement.",
       icon: <Monitor size={32} />,
       technologies: ["Python", "FASTAPI", "AWS EC2", "Ray Cluster", "Audio Processing", "Speech Recognition"],
       achievements: [
-        "Real-time voice separation and analysis",
+        "Collaborated on real-time voice separation and analysis system",
         "Contract compliance verification",
         "Advanced audio processing implementation",
         "Immediate feedback system",
@@ -119,6 +121,23 @@ const Projects = () => {
       ],
       category: "Security/Monitoring",
       type: "Work Project"
+    },
+    {
+      id: 'scanify-shopify',
+      title: "AI Shopify Theme Generator — OpenAI Integration",
+      company: "Scanify Dev (Freelance)",
+      shortDescription: "Contributed to an AI-powered platform that generates Shopify store themes using OpenAI APIs — automating content and image creation for ecommerce stores. Worked on the Python FastAPI backend in a live production environment.",
+      fullDescription: "Worked as a freelance backend developer on a production application that uses OpenAI APIs to automatically generate Shopify store themes, including AI-generated content and images tailored to each store's niche. The platform was built on a Python FastAPI backend. Responsibilities included resolving backend bugs that affected AI feature stability, improving OpenAI API integration reliability, and ensuring consistent delivery of AI-powered content and image generation features for active ecommerce clients.",
+      icon: <Monitor size={32} />,
+      technologies: ["Python", "FastAPI", "OpenAI API", "REST APIs", "Backend Development", "AI Integration"],
+      achievements: [
+        "Maintained and improved OpenAI API integrations in live production app",
+        "Resolved Python FastAPI backend bugs affecting AI feature delivery",
+        "Worked on real ecommerce product actively used by clients",
+        "Gained production experience with OpenAI image and text generation APIs"
+      ],
+      category: "AI/Machine Learning",
+      type: "Freelance Project"
     }
   ];
 
