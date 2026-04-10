@@ -1,128 +1,117 @@
-import React, { useEffect, useState } from 'react';
-import { Download, Mail, Github, Linkedin, ChevronDown, Sparkles, FileText } from 'lucide-react';
-
+import React from 'react';
+import { Link } from 'react-scroll';
+import { FaReact, FaNodeJs, FaPython, FaAws, FaDocker, FaJs } from 'react-icons/fa';
+import {
+    SiMongodb,
+    SiFlask,
+    SiFastapi,
+    SiOpenai,
+    SiRedis,
+    SiPostgresql,
+    SiGit,
+    SiLinux,
+    SiNginx,
+    SiPostman,
+     SiPandas,
+  SiNumpy,
+  SiMysql,
+  SiSpacy,
+} from 'react-icons/si';
+import portFolioImage from '../img/profile pic.jpg'
 const Hero = () => {
-  const [isVisible, setIsVisible] = useState(false);
+    const techStack = [
+        { icon: <FaReact />, name: "React" },
+        { icon: <FaNodeJs />, name: "Node.js" },
+        { icon: <SiMongodb />, name: "MongoDB" },
+        { icon: <FaPython />, name: "Python" },
+        { icon: <SiFlask />, name: "Flask" },
+        { icon: <SiFastapi />, name: "FastAPI" },
+        { icon: <FaAws />, name: "AWS" },
+        { icon: <FaDocker />, name: "Docker" },
+        { icon: <FaJs />, name: "JavaScript" },
+        { icon: <SiOpenai />, name: "OpenAI" },
+        { icon: <SiRedis />, name: "Redis" },
+        { icon: <SiPostgresql />, name: "PostgreSQL" },
+        { icon: <SiGit />, name: "Git" },
+        { icon: <SiLinux />, name: "Linux" },
+        { icon: <SiNginx />, name: "Nginx" },
+        { icon: <SiPostman />, name: "Postman" },
+        { icon: <SiPandas />,      name: "Pandas" },
+{ icon: <SiNumpy />,       name: "NumPy" },
+{ icon: <SiMysql />,       name: "MySQL" },
+{ icon: <SiSpacy />,       name: "NLP" },
+    ];
 
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
 
-  const scrollToAbout = () => {
-    const aboutSection = document.querySelector('#about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
-  const scrollToContact = () => {
-    const contactSection = document.querySelector('#contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+    return (
+        <section id="home" className="hero">
+            <div className="container">
+                <div className="hero-content">
 
-  return (
-    <section id="home" className="hero">
-      <div className="container">
-        <div className={`hero-content ${isVisible ? 'fade-in-up' : ''}`}>
-          <div className="hero-badge">
-            <Sparkles size={16} />
-            <span>Available for new opportunities</span>
-          </div>
 
-          <h1 className="hero-title">
-            Hi, I'm <span className="hero-name">Muhammad Hammad Asif</span>
-          </h1>
+                    <h1 className="hero-title">
+                        Hi, I'm <span className="gradient-text">Hammad</span>
+                        <br />
+                        Full-Stack & AI Engineer
+                    </h1>
 
-          <div className="hero-subtitle-container">
-            <p className="hero-subtitle">Python Backend & AI Integration Developer</p>
-          </div>
+                    <p className="hero-description">
+                        I build scalable MERN stack, Python & AI-powered solutions that turn complex business challenges into elegant digital products.
+                    </p>
 
-          <p className="hero-description">
-            Python backend and AI integration engineer. I build production ML systems, NLP pipelines, and scalable REST APIs — from architecture to cloud deployment.
-          </p>
+                    <div className="hero-buttons">
+                        <Link
+                            to="contact"
+                            spy={true}
+                            smooth={true}
+                            offset={-80}
+                            duration={500}
+                            className="btn btn-primary btn-large"
+                        >
+                            Let's Work Together
+                        </Link>
+                        <Link
+                            to="projects"
+                            spy={true}
+                            smooth={true}
+                            offset={-80}
+                            duration={500}
+                            className="btn btn-secondary btn-large"
+                        >
+                            View My Work
+                        </Link>
+                    </div>
 
-          <div className="hero-stats">
-            <div className="stat-item">
-              <span className="stat-number">4+</span>
-              <span className="stat-label">Years Experience</span>
+
+                </div>
+
+                <div className="hero-image">
+                    <div className="hero-image-wrapper">
+                        <img
+                            //   src="https://api.dicebear.com/7.x/avataaars/svg?seed=Hammad&backgroundColor=6366f1" 
+                            src={portFolioImage}
+                            alt="Full-Stack & AI Engineer"
+                        />
+                    </div>
+                </div>
+
             </div>
-            <div className="stat-item">
-              <span className="stat-number">15+</span>
-              <span className="stat-label">Projects Completed</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-number">3</span>
-              <span className="stat-label">Companies & Clients</span>
-            </div>
-          </div>
-
-          <div className="hero-buttons">
-            <button className="btn btn-primary" onClick={scrollToContact}>
-              <Mail size={20} />
-              Get In Touch
-            </button>
-            <div className="resume-buttons">
-              <a
-                href="/MuhammadHammad CV.pdf"
-                className="btn btn-secondary"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View Resume in new tab"
-              >
-                <FileText size={20} />
-                View Resume
-              </a>
-              <a
-                href="/MuhammadHammad CV.pdf"
-                className="btn btn-outline"
-                download="Muhammad_Hammad_Asif_Resume.pdf"
-                aria-label="Download Resume PDF"
-              >
-                <Download size={20} />
-                Download
-              </a>
-            </div>
-          </div>
-
-          <div className="hero-social">
-            <a
-              href="https://www.linkedin.com/in/hammad-asif/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-              aria-label="LinkedIn Profile"
-            >
-              <Linkedin size={24} />
-            </a>
-            <a
-              href="https://github.com/hammad-asif"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="social-link"
-              aria-label="GitHub Profile"
-            >
-              <Github size={24} />
-            </a>
-            <a
-              href="mailto:Hammadasif1437@gmail.com"
-              className="social-link"
-              aria-label="Email"
-            >
-              <Mail size={24} />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div className="scroll-indicator-container">
-        <button className="scroll-indicator float" onClick={scrollToAbout} aria-label="Scroll to about section">
-          <ChevronDown size={24} />
-        </button>
-      </div>
-    </section>
-  );
+                <div className="hero-tech-stack">
+                    <div className="marquee-wrapper">
+                        <div className="marquee-track">
+                            {[...techStack, ...techStack].map((skill, index) => (
+                                <div className="marquee-item" key={index}>
+                                    <span className="marquee-icon">{skill.icon}</span>
+                                    <span className="marquee-name">{skill.name}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+      
+        </section>
+    );
 };
 
 export default Hero;

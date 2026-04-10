@@ -30,11 +30,11 @@ const Navbar = () => {
 
   const navItems = [
     { href: '#home', label: 'Home' },
-    { href: '#about', label: 'About' },
-    { href: '#skills', label: 'Skills' },
-    { href: '#qualification', label: 'Qualification' },
+    { href: '#services', label: 'Services' },
+    { href: '#experience', label: 'Experience' },
     { href: '#projects', label: 'Work Projects' },
     { href: '#side-projects', label: 'Side Projects' },
+    { href: '#faq', label: 'FAQ\'s' },
     { href: '#contact', label: 'Contact' }
   ];
 
@@ -81,7 +81,11 @@ const Navbar = () => {
       <div className="container">
         <div className="nav-container">
           <a href="#home" className="nav-logo" onClick={(e) => { e.preventDefault(); handleNavClick('#home'); }}>
-            Hammad Asif
+            Hammad.
+            {/* <div className="hero-badge">
+            <span className="dot"></span>
+            Available for freelance projects
+          </div> */}
           </a>
           
           <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>

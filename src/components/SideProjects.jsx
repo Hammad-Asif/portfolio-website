@@ -126,7 +126,7 @@ const SideProjects = () => {
       <div className="container">
         <h2 className="section-title">Side Projects</h2>
         <p className="section-subtitle">
-          Personal projects and innovative solutions developed in my spare time
+          Personal projects and innovative solutions developed in my freelance Journey
         </p>
         
         <div className="projects-grid">

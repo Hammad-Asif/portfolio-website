@@ -1,184 +1,212 @@
 import React, { useState } from 'react';
-import { Mail, Linkedin, Github, MapPin, Phone, Send } from 'lucide-react';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
+    phone: '',
+    company: '',
+    service: '',
+    budget: '',
     message: ''
   });
+  const [loading, setLoading] = useState(false);
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Create mailto link with form data
-    const subject = encodeURIComponent(formData.subject || 'Contact from Portfolio Website');
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
-    const mailtoLink = `mailto:Hammadasif1437@gmail.com?subject=${subject}&body=${body}`;
-    window.location.href = mailtoLink;
+    setLoading(true);
+
+    try {
+      const response = await axios.post('/api/contact/submit', formData);
+      toast.success(response.data.message);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        service: '',
+        budget: '',
+        message: ''
+      });
+    } catch (error) {
+      toast.error(error.response?.data?.message || 'Something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const contactInfo = [
     {
-      icon: <Mail size={24} />,
-      label: "Email",
-      value: "Hammadasif1437@gmail.com",
-      link: "mailto:Hammadasif1437@gmail.com"
+      icon: <FaEnvelope />,
+      title: 'Email',
+      detail: 'Hammadcto786@gmail.com',
+      link: 'mailto:Hammadcto786@gmail.com'
     },
     {
-      icon: <Linkedin size={24} />,
-      label: "LinkedIn",
-      value: "Muhammad Hammad Asif",
-      link: "https://www.linkedin.com/in/hammad-asif/"
+      icon: <FaPhone />,
+      title: 'Phone',
+      detail: '+92 308 7724490',
+      link:null
     },
     {
-      icon: <Github size={24} />,
-      label: "GitHub",
-      value: "hammad-asif",
-      link: "https://github.com/hammad-asif"
+      icon: <FaMapMarkerAlt />,
+      title: 'Location',
+      detail: 'Pakistan (Available Worldwide - Remote)',
+      link: null
     },
     {
-      icon: <MapPin size={24} />,
-      label: "Location",
-      value: "Available for Remote Work",
+      icon: <FaClock />,
+      title: 'Response Time',
+      detail: 'Within 24 hours',
       link: null
     }
   ];
 
   return (
-    <section id="contact" className="section">
+    <section id="contact" className="section contact">
       <div className="container">
-        <h2 className="section-title">Get In Touch</h2>
-        <p className="section-subtitle">
-          Let's discuss how we can work together on your next project
-        </p>
-        
-        <div className="contact-content">
-          <div className="grid grid-2">
-            {/* Contact Information */}
-            <div className="contact-info">
-              <h3 className="contact-info-title">Contact Information</h3>
-              <p className="contact-info-description">
-                I'm always interested in new opportunities and exciting projects. 
-                Whether you have a question or just want to say hi, feel free to reach out!
-              </p>
-              
-              <div className="contact-details">
-                {contactInfo.map((info, index) => (
-                  <div key={index} className="contact-item">
-                    <div className="contact-icon">
-                      {info.icon}
-                    </div>
-                    <div className="contact-text">
-                      <div className="contact-label">{info.label}</div>
-                      {info.link ? (
-                        <a 
-                          href={info.link} 
-                          className="contact-value"
-                          target={info.link.startsWith('http') ? '_blank' : '_self'}
-                          rel={info.link.startsWith('http') ? 'noopener noreferrer' : ''}
-                        >
-                          {info.value}
-                        </a>
-                      ) : (
-                        <div className="contact-value">{info.value}</div>
-                      )}
-                    </div>
-                  </div>
-                ))}
+        <div className="contact-info">
+          <p className="section-subtitle">Get In Touch</p>
+          <h2>Let's Build Something <span className="gradient-text">Amazing Together</span></h2>
+          <p>
+            Have a project in mind? I'd love to hear about it. Fill out the form and I'll get back to you 
+            within 24 hours with a free consultation and quote.
+          </p>
+
+          <div className="contact-details">
+            {contactInfo.map((item, index) => (
+              <div key={index} className="contact-item">
+                <div className="contact-item-icon">{item.icon}</div>
+                <div className="contact-item-content">
+                  <h4>{item.title}</h4>
+                  {item.link ? (
+                    <a href={item.link}>{item.detail}</a>
+                  ) : (
+                    <p>{item.detail}</p>
+                  )}
+                </div>
               </div>
-              
-              <div className="availability-status">
-                <div className="status-indicator"></div>
-                <span>Available for new opportunities</span>
-              </div>
-            </div>
-            
-            {/* Contact Form */}
-            <div className="contact-form-container">
-              <h3 className="contact-form-title">Send a Message</h3>
-              <form className="contact-form" onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="name" className="form-label">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="form-input"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                
-                <div className="form-group">
-                  <label htmlFor="email" className="form-label">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    className="form-input"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                
-                <div className="form-group">
-                  <label htmlFor="subject" className="form-label">Subject</label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    className="form-input"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                
-                <div className="form-group">
-                  <label htmlFor="message" className="form-label">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    className="form-textarea"
-                    rows="5"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                  ></textarea>
-                </div>
-                
-                <button type="submit" className="btn btn-primary form-submit">
-                  <Send size={20} />
-                  Send Message
-                </button>
-              </form>
-            </div>
+            ))}
           </div>
         </div>
+
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="name">Full Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="John Doe"
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email Address *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="john@example.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="+92 300 1234567"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="company">Company Name</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+                placeholder="Your Company"
+              />
+            </div>
+          </div>
+
+          <div className="form-row">
+            <div className="form-group">
+              <label htmlFor="service">Service Required *</label>
+              <select
+                id="service"
+                name="service"
+                value={formData.service}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select a service</option>
+                <option value="Web Development">Web Development</option>
+                <option value="AI Development">AI Development</option>
+                <option value="Python Scripting">Python Scripting</option>
+                <option value="API Development">API Development</option>
+                <option value="DevOps & Deployment">DevOps & Deployment</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div className="form-group">
+              <label htmlFor="budget">Budget Range</label>
+              <select
+                id="budget"
+                name="budget"
+                value={formData.budget}
+                onChange={handleChange}
+              >
+                <option value="">Select budget range</option>
+                <option value="Less than $1,000">Less than $1,000</option>
+                <option value="$1,000 - $5,000">$1,000 - $5,000</option>
+                <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+                <option value="$25,000+">$25,000+</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="message">Project Details *</label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Tell me about your project, goals, and timeline..."
+              required
+            />
+          </div>
+
+          <button type="submit" className="form-submit" disabled={loading}>
+            {loading ? 'Sending...' : 'Send Message & Get Free Quote'}
+          </button>
+        </form>
       </div>
-      
-      {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <p>&copy; 2026 Muhammad Hammad Asif. All rights reserved.</p>
-            <p>Built with React & Modern Web Technologies</p>
-          </div>
-        </div>
-      </footer>
     </section>
   );
 };

@@ -2,7 +2,7 @@
 
 A modern, responsive portfolio website built with React and Vite, showcasing my expertise as a Python AI & NLP Engineer and Full-Stack Developer. Inspired by the Zed template with a dark theme and orange accents.
 
-🌐 **Live Demo**: [https://your-portfolio-url.vercel.app](https://your-portfolio-url.vercel.app)
+🌐 **Live Demo**: https://hammad-portfolio.recursivedata.com/
 
 ## 🚀 Features
 
