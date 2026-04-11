@@ -43,7 +43,36 @@ const Hero = () => {
         { icon: <SiSpacy />, name: "NLP" },
     ];
 
+    // Inner ring skills
+    const innerSkills = [
+        { icon: <FaReact />, name: "React" },
+        { icon: <SiMongodb />, name: "MongoDB" },
+        { icon: <FaPython />, name: "Python" },
+        { icon: <SiFlask />, name: "Flask" },
+        { icon: <SiFastapi />, name: "FastAPI" },
+        { icon: <FaAws />, name: "AWS" },
+        { icon: <FaDocker />, name: "Docker" },
+        { icon: <SiOpenai />, name: "OpenAI" },
+        { icon: <SiGit />, name: "Git" },
+    ];
 
+    // Outer ring skills
+    const outerSkills = [
+    
+        { icon: <SiNginx />, name: "Nginx" },
+        { icon: <SiPostman />, name: "Postman" },
+        { icon: <SiPandas />, name: "Pandas" },
+        { icon: <SiNumpy />, name: "NumPy" },
+        { icon: <SiMysql />, name: "MySQL" },
+        { icon: <SiSpacy />, name: "NLP" },
+    ];
+    // Position icons evenly around the ring
+    const getPosition = (index, total, radius) => {
+        const angle = (index / total) * (2 * Math.PI) - Math.PI / 2;
+        const x = Math.cos(angle) * radius + 50; // % from center
+        const y = Math.sin(angle) * radius + 50;
+        return { left: `${x}%`, top: `${y}%` };
+    };
 
     return (
         <section id="home" className="hero">
@@ -52,9 +81,9 @@ const Hero = () => {
 
 
                     <h1 className="hero-title">
-                        Hi, I'm <span className="gradient-text"><TypeAnimation
+                        I'm <span className="gradient-text"><TypeAnimation
                             sequence={[
-                                'Muhammad Hammad Asif',1000,
+                                'Muhammad Hammad Asif', 1000,
                                 'Full-Stack Developer', 1000,
                                 'AI Engineer', 1000,
                                 'MERN Stack Expert', 1000,
@@ -66,7 +95,7 @@ const Hero = () => {
                             deletingSpeed={70}
                             repeat={Infinity}
                         /></span>
-                        
+
                     </h1>
 
                     <p className="hero-description">
@@ -98,16 +127,49 @@ const Hero = () => {
 
 
                 </div>
+                <div className="avatar-container">
 
-                <div className="hero-image">
-                    <div className="hero-image-wrapper">
-                        <img
-                            //   src="https://api.dicebear.com/7.x/avataaars/svg?seed=Hammad&backgroundColor=6366f1" 
-                            src={portFolioImage}
-                            alt="Full-Stack & AI Engineer"
-                        />
+                    {/* Inner rotating ring */}
+                    <div className="orbit-ring">
+                        {innerSkills.map((skill, i) => (
+                            <div
+                                key={i}
+                                className="orbit-icon"
+                                style={getPosition(i, innerSkills.length, 47)}
+                            >
+                                {skill.icon}
+                                <span className="tooltip">{skill.name}</span>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Outer reverse rotating ring */}
+                    <div className="orbit-ring-reverse">
+                        {outerSkills.map((skill, i) => (
+                            <div
+                                key={i}
+                                className="orbit-icon"
+                                style={getPosition(i, outerSkills.length, 47)}
+                            >
+                                {skill.icon}
+                                <span className="tooltip">{skill.name}</span>
+                            </div>
+                        ))}
+                    </div>
+
+
+                    <div className="hero-image">
+                        <div className="hero-image-wrapper">
+                            <img
+                                //   src="https://api.dicebear.com/7.x/avataaars/svg?seed=Hammad&backgroundColor=6366f1" 
+                                src={portFolioImage}
+                                alt="Full-Stack & AI Engineer"
+                                className="avatar-image"
+                            />
+                        </div>
                     </div>
                 </div>
+
 
             </div>
             <div className="hero-tech-stack">

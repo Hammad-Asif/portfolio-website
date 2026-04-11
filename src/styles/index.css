@@ -3365,3 +3365,119 @@ body.mobile-menu-open {
   }
   
 }
+
+
+
+
+/* Orbital Ring */
+.avatar-container {
+  position: relative;
+  width: 380px;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-image {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #6366f1;
+  box-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
+  z-index: 2;
+  position: relative;
+}
+
+/* Rotating Ring */
+.orbit-ring {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 1px dashed rgba(99, 102, 241, 0.3);
+  animation: orbit-rotate 20s linear infinite;
+}
+
+.orbit-ring-reverse {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 1px dashed rgba(139, 92, 246, 0.2);
+  animation: orbit-rotate-reverse 25s linear infinite;
+}
+
+/* Each skill icon on the ring */
+.orbit-icon {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  background: #18181b;
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #6366f1;
+  /* Counter-rotate to keep icons upright */
+  animation: counter-rotate 20s linear infinite;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  top: 50%;
+  left: 50%;
+}
+
+.orbit-ring-reverse .orbit-icon {
+  animation: counter-rotate-reverse 25s linear infinite;
+}
+
+.orbit-icon:hover {
+  background: #6366f1;
+  color: #fff;
+  transform: translate(-50%, -50%) scale(1.2) !important;
+}
+
+/* Tooltip */
+.orbit-icon .tooltip {
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #18181b;
+  border: 1px solid #6366f1;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.orbit-icon:hover .tooltip {
+  opacity: 1;
+}
+
+@keyframes orbit-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes orbit-rotate-reverse {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+@keyframes counter-rotate {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+@keyframes counter-rotate-reverse {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
