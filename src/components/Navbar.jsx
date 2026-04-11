@@ -121,7 +121,7 @@ const Navbar = () => {
         <div className="mobile-menu-overlay">
           <div className="mobile-menu-header">
             <a href="#home" className="mobile-menu-logo">
-              Muhammad Hammad Asif
+              Hammad.
             </a>
             <button
               className="mobile-menu-close"
@@ -151,7 +151,7 @@ const Navbar = () => {
           <div className="mobile-menu-footer">
             <div className="mobile-social-links">
               <a
-                href="https://linkedin.com/in/muhammadhammadasif"
+                href="https://www.linkedin.com/in/hammad-asif/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mobile-social-link"
@@ -162,7 +162,7 @@ const Navbar = () => {
                 </svg>
               </a>
               <a
-                href="https://github.com/hammad-asif"
+                href="https://github.com/Hammad-Asif"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mobile-social-link"
@@ -173,7 +173,7 @@ const Navbar = () => {
                 </svg>
               </a>
               <a
-                href="mailto:Hammadasif1437@gmail.com"
+                href="mailto:Hammadcto786@gmail.com"
                 className="mobile-social-link"
                 aria-label="Email"
               >
