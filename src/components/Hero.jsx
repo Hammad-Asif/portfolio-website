@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-scroll';
+import { TypeAnimation } from 'react-type-animation';
 import { FaReact, FaNodeJs, FaPython, FaAws, FaDocker, FaJs } from 'react-icons/fa';
 import {
     SiMongodb,
@@ -12,10 +13,10 @@ import {
     SiLinux,
     SiNginx,
     SiPostman,
-     SiPandas,
-  SiNumpy,
-  SiMysql,
-  SiSpacy,
+    SiPandas,
+    SiNumpy,
+    SiMysql,
+    SiSpacy,
 } from 'react-icons/si';
 import portFolioImage from '../img/profile pic.jpg'
 const Hero = () => {
@@ -36,10 +37,10 @@ const Hero = () => {
         { icon: <SiLinux />, name: "Linux" },
         { icon: <SiNginx />, name: "Nginx" },
         { icon: <SiPostman />, name: "Postman" },
-        { icon: <SiPandas />,      name: "Pandas" },
-{ icon: <SiNumpy />,       name: "NumPy" },
-{ icon: <SiMysql />,       name: "MySQL" },
-{ icon: <SiSpacy />,       name: "NLP" },
+        { icon: <SiPandas />, name: "Pandas" },
+        { icon: <SiNumpy />, name: "NumPy" },
+        { icon: <SiMysql />, name: "MySQL" },
+        { icon: <SiSpacy />, name: "NLP" },
     ];
 
 
@@ -51,9 +52,21 @@ const Hero = () => {
 
 
                     <h1 className="hero-title">
-                        Hi, I'm <span className="gradient-text">Hammad</span>
-                        <br />
-                        Full-Stack & AI Engineer
+                        Hi, I'm <span className="gradient-text"><TypeAnimation
+                            sequence={[
+                                'Muhammad Hammad Asif',1000,
+                                'Full-Stack Developer', 1000,
+                                'AI Engineer', 1000,
+                                'MERN Stack Expert', 1000,
+                                'Python Developer', 1000,
+                                'LLM Integration Expert', 1000,
+                            ]}
+                            wrapper="span"
+                            speed={70}
+                            deletingSpeed={70}
+                            repeat={Infinity}
+                        /></span>
+                        
                     </h1>
 
                     <p className="hero-description">
@@ -97,19 +110,19 @@ const Hero = () => {
                 </div>
 
             </div>
-                <div className="hero-tech-stack">
-                    <div className="marquee-wrapper">
-                        <div className="marquee-track">
-                            {[...techStack, ...techStack].map((skill, index) => (
-                                <div className="marquee-item" key={index}>
-                                    <span className="marquee-icon">{skill.icon}</span>
-                                    <span className="marquee-name">{skill.name}</span>
-                                </div>
-                            ))}
-                        </div>
+            <div className="hero-tech-stack">
+                <div className="marquee-wrapper">
+                    <div className="marquee-track">
+                        {[...techStack, ...techStack].map((skill, index) => (
+                            <div className="marquee-item" key={index}>
+                                <span className="marquee-icon">{skill.icon}</span>
+                                <span className="marquee-name">{skill.name}</span>
+                            </div>
+                        ))}
                     </div>
                 </div>
-      
+            </div>
+
         </section>
     );
 };

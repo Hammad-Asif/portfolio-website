@@ -9,8 +9,8 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
   },
-  // server:{
-  //   host:true,
-  //   port:5173
-  // }
+  server:{
+    host:true,
+    port:5173
+  }
 })
