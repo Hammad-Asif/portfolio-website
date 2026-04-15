@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShoppingCart, Smartphone, Code, Package, FileText, ChevronDown, ChevronUp } from 'lucide-react';
+import { ShoppingCart, Smartphone, Code, Package, FileText, ChevronDown, ChevronUp, BrainCog } from 'lucide-react';
 
 const SideProjects = () => {
   const [expandedProjects, setExpandedProjects] = useState({});
@@ -12,6 +12,24 @@ const SideProjects = () => {
   };
 
   const sideProjects = [
+    {
+      id: 'portfolio-scraper-job-score-matcher',
+      title: "Portfolio Scraper Job Score Matcher",
+      shortDescription: "FastAPI-based service that extracts developer portfolios and scores them against job descriptions using AI-driven analysis.",
+      fullDescription: "This project is a production-ready backend service built with FastAPI that automates the extraction and evaluation of developer portfolios. It leverages web scraping tools like BeautifulSoup and Playwright to handle both static and JavaScript-heavy websites, ensuring comprehensive data retrieval. The system integrates Large Language Models (LLMs) via LangChain to analyze extracted content, including skills, experience, and projects, and compares it against job descriptions. It generates a compatibility score along with a detailed gap analysis, highlighting missing skills or mismatches. The architecture demonstrates strong capabilities in API design, asynchronous processing, AI integration, and database management using SQLite, all containerized with Docker for scalability and deployment.",
+      icon: <BrainCog size={32} />,
+      technologies: ["Python", "FastAPI", "BeautifulSoup", "Playwright", "Selenium", "SQLite", "LangChain", "Jinja2", "Docker", "AI Integration", "Web Scraping"],
+      achievements: [
+        "Automated portfolio data extraction from dynamic and static websites",
+        "LLM-powered job compatibility scoring system",
+        "Detailed gap analysis between candidate profile and job requirements",
+        "Asynchronous scraping and processing for improved performance",
+        "Robust API design with FastAPI for scalable backend services",
+        "Containerized deployment using Docker"
+      ],
+      category: "AI Integration",
+      status: "Completed"
+    },
     {
       id: 'ecommerce-price-comparison',
       title: "Real-time Ecommerce Price Comparison Tool",
@@ -116,6 +134,8 @@ const SideProjects = () => {
         return '#3b82f6';
       case 'Web Development':
         return '#06b6d4';
+      case 'AI Integration':
+        return '#3b82f6'
       default:
         return '#6b7280';
     }
@@ -128,7 +148,7 @@ const SideProjects = () => {
         <p className="section-subtitle">
           Personal projects and innovative solutions developed in my freelance Journey
         </p>
-        
+
         <div className="projects-grid">
           <div className="grid grid-1">
             {sideProjects.map((project) => (
@@ -140,7 +160,7 @@ const SideProjects = () => {
                   <div className="project-title-section">
                     <h3 className="project-title">{project.title}</h3>
                     <div className="project-meta">
-                      <span 
+                      <span
                         className="project-category"
                         style={{ backgroundColor: getCategoryColor(project.category) }}
                       >
@@ -150,16 +170,16 @@ const SideProjects = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <p className="project-description">{project.shortDescription}</p>
-                
+
                 {expandedProjects[project.id] && (
                   <div className="project-expanded-content">
                     <div className="project-full-description">
                       <h4 className="description-title">Detailed Overview:</h4>
                       <p>{project.fullDescription}</p>
                     </div>
-                    
+
                     <div className="project-achievements">
                       <h4 className="achievements-title">Key Achievements:</h4>
                       <ul className="achievements-list">
@@ -172,8 +192,8 @@ const SideProjects = () => {
                     </div>
                   </div>
                 )}
-                
-                <button 
+
+                <button
                   className="read-more-btn"
                   onClick={() => toggleProject(project.id)}
                 >
@@ -189,7 +209,7 @@ const SideProjects = () => {
                     </>
                   )}
                 </button>
-                
+
                 <div className="project-technologies">
                   <h4 className="tech-title">Technologies Used:</h4>
                   <div className="tech-tags">

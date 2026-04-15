@@ -11,6 +11,7 @@ import Process from './components/Process';
 import FloatingCTA from './components/FloatingCTA';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -25,8 +26,9 @@ function App() {
       <SideProjects />
       <Publications />
       <Contact />
-      <FloatingCTA/>
+      {/* <FloatingCTA/> */}
       <Footer/>
+      {/* <Chatbot/> */}
     </div>
   );
 }
